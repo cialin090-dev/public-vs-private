@@ -1,0 +1,30 @@
+<?php
+class Mahasiswa {
+    private $nama;
+    private $nilai;
+
+    public function setNama($nama) {
+        $this->nama = $nama;
+    }
+    public function setNilai($nilai) {
+        if ($nilai >= 0 && $nilai <= 100) {
+            $this->nilai =$nilai;
+        }  else {
+            echo "Nilai harus berada antara 0 sampai 100.";
+        }
+    }
+    public function __getNama() {
+        return $this->nama;
+    }
+    public function __getNilai() {
+        return $this->nilai;
+    }
+        
+}
+$mhs1 = new Mahasiswa();
+$mhs1->setNama("Nama");
+$mhs1-> setNilai(85);
+echo "Nama: " . $mhs1->getNama() . "<br>";
+echo "Nama: " . $mhs1->__getNilai();
+
+?>
